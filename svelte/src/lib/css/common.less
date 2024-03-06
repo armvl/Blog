@@ -1,0 +1,65 @@
+@import './vars.less';
+@import './reset.less';
+@import './fonts.less';
+
+:root {
+  --font: @font;
+  --bodyBackground: @bodyBackground;
+  --paddingBody: @paddingBody;
+  --colorText: @colorText;
+  --themeDuration: @themeDuration;
+  --themeTiming: @themeTiming;
+
+  --labelDateColor: @labelDateColor;
+  --labelDateStripeColor: @labelDateStripeColor;
+  --labelDateStripeBackground: @labelDateStripeBackground;
+}
+
+* {
+  transition:
+    color var(--themeDuration) var(--themeTiming),
+    border-color var(--themeDuration) var(--themeTiming),
+    background-color var(--themeDuration) var(--themeTiming);
+}
+
+textarea,
+input,
+button,
+body {
+  font: 400 14px var(--font);
+}
+body {
+  color: var(--colorText);
+  background: var(--bodyBackground);
+  padding: var(--paddingBody);
+}
+
+html body .process {
+  &, &:hover, &:active {
+    text-decoration: none;
+    pointer-events: none;
+    opacity: .6;
+    cursor: progress;
+    background-size: 20px 20px !important;
+    background-image: -webkit-linear-gradient(135deg,rgba(0,0,0,.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.25) 75%,transparent 75%,transparent) !important;
+    background-image: -moz-linear-gradient(135deg,rgba(0,0,0,.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.25) 75%,transparent 75%,transparent) !important;
+    background-image: -ms-linear-gradient(135deg,rgba(0,0,0,.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.25) 75%,transparent 75%,transparent) !important;
+    background-image: -o-linear-gradient(135deg,rgba(0,0,0,.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.25) 75%,transparent 75%,transparent) !important;
+    background-image: linear-gradient(135deg,rgba(0,0,0,.25) 25%,transparent 25%,transparent 50%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.25) 75%,transparent 75%,transparent) !important;
+    -webkit-animation: animate-stripes .8s linear infinite;
+    -moz-animation: animate-stripes .8s linear infinite;
+    animation: animate-stripes .8s linear infinite;
+  }
+}
+@-webkit-keyframes animate-stripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+@-moz-keyframes animate-stripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
+@keyframes animate-stripes {
+  0% { background-position: 0 0; }
+  100% { background-position: 40px 0; }
+}
